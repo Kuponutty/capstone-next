@@ -10,7 +10,7 @@ const sequelize = new Sequelize("timesheetdb", "timesheetadmin", "JmDeCp#1", {
 export default async function handler(req, res) {
   try {
     if (req.method === "GET") {
-      const startDate = "2024-11-18";
+      const startDate = "2024-12-02";
 
       // Fetch reporting period ID for the given start date
       const periodSQL = `SELECT id FROM reporting_periods WHERE start_date = :startDate`;
@@ -36,6 +36,11 @@ export default async function handler(req, res) {
         type: Sequelize.QueryTypes.SELECT,
       });
 
+      const usersSQL = `SELECT * FROM users`;
+      const allUsers = await sequelize.query(usersSQL, {
+        type: Sequelize.QueryTypes.SELECT,
+      });
+
       // Fetch users who didn’t submit a timesheet
       const missingTimesheetsSQL = `
         SELECT u.wid, u.email 
@@ -51,7 +56,7 @@ export default async function handler(req, res) {
       });
 
       // Respond with the fetched data
-      return res.status(200).json({ timesheets, missingUsers });
+      return res.status(200).json({ timesheets, missingUsers, allUsers });
     }
 
     if (req.method === "POST") {
