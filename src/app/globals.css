@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -18,4 +18,79 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+} */
+/* General Styling */
+/* General Styling */
+.dashboard {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  color: #444;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 8px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+/* Loading/Error Messages */
+.loading, .error {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Section Styling */
+.section {
+  margin-top: 20px;
+}
+
+/* Utility Classes */
+.center {
+  text-align: center;
+  margin: 20px 0;
 }
